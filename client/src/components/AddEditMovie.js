@@ -28,6 +28,7 @@ const AddEditMovie = ({ movie, onClose }) => {
       <h2>{movie ? 'Edit Movie' : 'Add Movie'}</h2>
       <form onSubmit={handleSubmit}>
         <input
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           type="text"
           name="title"
           value={formData.title}
@@ -36,6 +37,7 @@ const AddEditMovie = ({ movie, onClose }) => {
           required
         />
         <textarea
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           name="description"
           value={formData.description}
           onChange={handleChange}
@@ -44,6 +46,7 @@ const AddEditMovie = ({ movie, onClose }) => {
           required
         ></textarea>
         <input
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           type="number"
           name="releaseYear"
           value={formData.releaseYear}
@@ -52,6 +55,7 @@ const AddEditMovie = ({ movie, onClose }) => {
           required
         />
         <input
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           type="text"
           name="genre"
           value={formData.genre}
@@ -59,7 +63,7 @@ const AddEditMovie = ({ movie, onClose }) => {
           placeholder="Genre"
           required
         />
-        <button type="submit">Save</button>
+        <button className='bg-black text-white p-2 m-2 rounded hover:bg-teal-950' type="submit">Save</button>
       </form>
     </div>
   );

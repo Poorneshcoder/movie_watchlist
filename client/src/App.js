@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Movie Watchlist</h1>
+      <h1 className="flex justify-center font-bold text-2xl">Movie Watchlist</h1>
       <AddMovie /> 
       <hr />
       <MovieList movies={movies} />

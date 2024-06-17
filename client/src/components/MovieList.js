@@ -24,7 +24,7 @@ const MovieList = () => {
           <Movie key={movie._id} movie={movie} onEdit={handleEdit} />
         ))
       ) : (
-        <p>No movies found.</p>
+        <h2 className='font-bold text-right'>No movies found.</h2>
       )}
       {editingMovie && <AddEditMovie movie={editingMovie} onClose={handleClose} />}
     </div>

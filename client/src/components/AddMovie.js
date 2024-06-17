@@ -22,25 +22,25 @@ const AddMovie = () => {
 
   return (
     <div>
-      <h2>Add Movie</h2>
+      {/* <h2>Add Movie</h2> */}
       <form onSubmit={handleSubmit} className='grid gap-6 mb-6 md:grid-col-2 m-auto w-96'>
         <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
           Title:
-          <input type="text" className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input type="text" className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={title} onChange={(e) => setTitle(e.target.value)} required />
         </label>
         <label>
           Description:
-          <textarea className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={description} onChange={(e) => setDescription(e.target.value)} />
+          <textarea className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' value={description} onChange={(e) => setDescription(e.target.value)} required />
         </label>
         <label>
           Release Year:
-          <input className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' type="number" value={releaseYear} onChange={(e) => setReleaseYear(e.target.value)} />
+          <input className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' type="number" value={releaseYear} onChange={(e) => setReleaseYear(e.target.value)} required />
         </label>
         <label>
           Genre:
-          <input className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
+          <input className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' type="text" value={genre} onChange={(e) => setGenre(e.target.value)} required/>
         </label>
-        <button className='bg-black text-white p-2 m-2' type="submit">Add Movie</button>
+        <button className='bg-black text-white p-2 m-2 rounded hover:bg-teal-950' type="submit">Add Movie</button>
       </form>
     </div>
   );
