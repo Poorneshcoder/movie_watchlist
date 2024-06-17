@@ -21,10 +21,12 @@ export const getMovies = () => async (dispatch) => {
 // Add movie
 export const addMovie = (movie) => async (dispatch) => {
   try {
+    console.log('Sending movie:', movie); // Debug log
     const response = await axios.post('https://movie-watchlist-kbdd.onrender.com/api/movies', movie);
+    console.log('Response:', response.data); // Debug log
     dispatch({ type: ADD_MOVIE, payload: response.data });
   } catch (error) {
-    console.error(error);
+    console.error('Error adding movie:', error); // Debug log
   }
 };
 
