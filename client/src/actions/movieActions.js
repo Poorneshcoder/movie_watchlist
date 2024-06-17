@@ -8,7 +8,7 @@ import {
   REVIEW_MOVIE,
 } from './actionTypes';
 
-// Fetch movies
+// Get movies
 export const getMovies = () => async (dispatch) => {
   try {
     const response = await axios.get('https://movie-watchlist-kbdd.onrender.com/api/movies');
@@ -29,6 +29,7 @@ export const addMovie = (movie) => async (dispatch) => {
     console.error('Error adding movie:', error); // Debug log
   }
 };
+
 
 // Update movie
 export const updateMovie = (id, updatedMovie) => async (dispatch) => {
