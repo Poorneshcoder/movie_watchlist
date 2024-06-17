@@ -13,7 +13,10 @@ const app = express();
 // middlewars
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'https://movie-watchlist-iota-one.vercel.app/'
+}));
 
 // routes
 app.use('/api/movies',movieRoutes)
