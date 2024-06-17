@@ -12,15 +12,30 @@ exports.getAllMovies = async(req,res)=>{
 
 // add a new movie
 
-exports.addMovie = async(req,res)=> {
-    const movie = new Movie(req.body);
-    try {
-        const newMovie =await movie.save();
-        res.status(201).json(newMovie)
-    } catch (error) {
-        res.status(400).json({message:error.message})
+exports.addMovie = async (req, res) => {
+  console.log('Received request:', req.body); // Debug log
+  try {
+    const { title, description, releaseYear, genre } = req.body;
+    if (!title || !description || !releaseYear || !genre) {
+      console.log('Invalid request data:', req.body); // Debug log
+      return res.status(400).json({ error: 'All fields are required' });
     }
-}
+
+    const newMovie = new Movie({
+      title,
+      description,
+      releaseYear,
+      genre
+    });
+
+    await newMovie.save();
+    console.log('Movie saved:', newMovie); // Debug log
+    res.status(201).json(newMovie);
+  } catch (error) {
+    console.error('Server error:', error); // Debug log
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
 // get a single movie
 exports.getMoiveById = async(req,res)=>{
