@@ -11,7 +11,7 @@ import {
 // Fetch movies
 export const getMovies = () => async (dispatch) => {
   try {
-    const response = await axios.get('https://movie-watchlist-kbdd.onrender.com');
+    const response = await axios.get('https://movie-watchlist-kbdd.onrender.com/api/movies');
     dispatch({ type: 'GET_MOVIES', payload: response.data });
   } catch (error) {
     console.error(error);
@@ -21,7 +21,7 @@ export const getMovies = () => async (dispatch) => {
 // Add movie
 export const addMovie = (movie) => async (dispatch) => {
   try {
-    const response = await axios.post('https://movie-watchlist-kbdd.onrender.com', movie);
+    const response = await axios.post('https://movie-watchlist-kbdd.onrender.com/api/movies', movie);
     dispatch({ type: ADD_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -31,7 +31,7 @@ export const addMovie = (movie) => async (dispatch) => {
 // Update movie
 export const updateMovie = (id, updatedMovie) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/${id}`, updatedMovie);
+    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/api/movies/${id}`, updatedMovie);
     dispatch({ type: UPDATE_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -41,7 +41,7 @@ export const updateMovie = (id, updatedMovie) => async (dispatch) => {
 // Delete movie
 export const deleteMovie = (id) => async (dispatch) => {
   try {
-    await axios.delete(`https://movie-watchlist-kbdd.onrender.com/${id}`);
+    await axios.delete(`https://movie-watchlist-kbdd.onrender.com/api/movies/${id}`);
     dispatch({ type: DELETE_MOVIE, payload: id });
   } catch (error) {
     console.error(error);
@@ -51,7 +51,7 @@ export const deleteMovie = (id) => async (dispatch) => {
 // Rate movie
 export const rateMovie = (id, rating) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/${id}/rate`, { rating });
+    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/api/movies/${id}/rate`, { rating });
     dispatch({ type: RATE_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -61,7 +61,7 @@ export const rateMovie = (id, rating) => async (dispatch) => {
 // Review movie
 export const reviewMovie = (id, review) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/${id}/review`, { review });
+    const response = await axios.put(`https://movie-watchlist-kbdd.onrender.com/api/movies/${id}/review`, { review });
     dispatch({ type: REVIEW_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -72,7 +72,7 @@ export const reviewMovie = (id, review) => async (dispatch) => {
 // Example action creator (in movieActions.js)
 export const toggleWatched = (id, watched) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://movie-watchlist-kbdd.onrender.com/${id}`, { watched });
+    const res = await axios.put(`https://movie-watchlist-kbdd.onrender.com/api/movies/${id}`, { watched });
     dispatch({
       type: 'TOGGLE_WATCHED',
       payload: { id, watched: res.data.watched }
