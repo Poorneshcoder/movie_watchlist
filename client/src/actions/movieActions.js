@@ -28,6 +28,13 @@ export const addMovie = (movie) => async (dispatch) => {
   }
 };
 
+// Example call to add a movie
+addMovie({
+  title: 'Inception',
+  director: 'Christopher Nolan',
+  year: 2010
+});
+
 // Update movie
 export const updateMovie = (id, updatedMovie) => async (dispatch) => {
   try {
