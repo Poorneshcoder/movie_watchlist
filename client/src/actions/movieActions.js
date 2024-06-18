@@ -11,7 +11,7 @@ import {
 // Get movies
 export const getMovies = () => async (dispatch) => {
   try {
-    const response = await axios.get('https://movie-watchlist-wkdi.vercel.app//api/movies');
+    const response = await axios.get('https://movie-watchlist-o5ob.vercel.app/api/movies');
     dispatch({ type: 'GET_MOVIES', payload: response.data });
   } catch (error) {
     console.error(error);
@@ -22,7 +22,7 @@ export const getMovies = () => async (dispatch) => {
 export const addMovie = (movie) => async (dispatch) => {
   try {
     console.log('Sending movie:', movie); // Debug log
-    const response = await axios.post('https://movie-watchlist-wkdi.vercel.app//api/movies', movie);
+    const response = await axios.post('https://movie-watchlist-o5ob.vercel.app/api/movies', movie);
     console.log('Response:', response.data); // Debug log
     dispatch({ type: ADD_MOVIE, payload: response.data });
   } catch (error) {
@@ -34,7 +34,7 @@ export const addMovie = (movie) => async (dispatch) => {
 // Update movie
 export const updateMovie = (id, updatedMovie) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-wkdi.vercel.app//api/movies/${id}`, updatedMovie);
+    const response = await axios.put(`https://movie-watchlist-o5ob.vercel.app/api/movies/${id}`, updatedMovie);
     dispatch({ type: UPDATE_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -44,7 +44,7 @@ export const updateMovie = (id, updatedMovie) => async (dispatch) => {
 // Delete movie
 export const deleteMovie = (id) => async (dispatch) => {
   try {
-    await axios.delete(`https://movie-watchlist-wkdi.vercel.app//api/movies/${id}`);
+    await axios.delete(`https://movie-watchlist-o5ob.vercel.app/api/movies/${id}`);
     dispatch({ type: DELETE_MOVIE, payload: id });
   } catch (error) {
     console.error(error);
@@ -54,7 +54,7 @@ export const deleteMovie = (id) => async (dispatch) => {
 // Rate movie
 export const rateMovie = (id, rating) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-wkdi.vercel.app//api/movies/${id}/rate`, { rating });
+    const response = await axios.put(`https://movie-watchlist-o5ob.vercel.app/api/movies/${id}/rate`, { rating });
     dispatch({ type: RATE_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -64,7 +64,7 @@ export const rateMovie = (id, rating) => async (dispatch) => {
 // Review movie
 export const reviewMovie = (id, review) => async (dispatch) => {
   try {
-    const response = await axios.put(`https://movie-watchlist-wkdi.vercel.app//api/movies/${id}/review`, { review });
+    const response = await axios.put(`https://movie-watchlist-o5ob.vercel.app/api/movies/${id}/review`, { review });
     dispatch({ type: REVIEW_MOVIE, payload: response.data });
   } catch (error) {
     console.error(error);
@@ -75,7 +75,7 @@ export const reviewMovie = (id, review) => async (dispatch) => {
 // Example action creator (in movieActions.js)
 export const toggleWatched = (id, watched) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://movie-watchlist-wkdi.vercel.app//api/movies/${id}`, { watched });
+    const res = await axios.put(`https://movie-watchlist-o5ob.vercel.app/api/movies/${id}`, { watched });
     dispatch({
       type: 'TOGGLE_WATCHED',
       payload: { id, watched: res.data.watched }
